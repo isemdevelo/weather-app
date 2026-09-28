@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <meta name="description" content="A clean weather dashboard — search any city for current conditions and 5-day forecast." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Weather<span>.</span></h1>
+      <p>Search any city to see current conditions and the 5-day forecast.</p>
+    </header>
+
+    <form id="search-form" class="search">
+      <input
+        id="city-input"
+        type="text"
+        placeholder="Enter a city… (e.g. Addis Ababa)"
+        aria-label="City name"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      </button>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="current" class="current hidden"></section>
+
+    <section id="forecast" class="forecast hidden">
+      <h2>5-Day Forecast</h2>
+      <div id="forecast-grid" class="forecast-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
